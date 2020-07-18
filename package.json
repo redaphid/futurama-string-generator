@@ -9,7 +9,7 @@
   "private": false,
   "dependencies": {
     "fetch": "^1.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "natural": "^0.6.3"
   },
   "devDependencies": {
