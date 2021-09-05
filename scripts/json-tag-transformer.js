@@ -38,17 +38,6 @@ const terriblePowerOf2Finder = (n) =>{
     return power - 1
 
 }
-const randomName = ({ Adjectives, Nouns, Verbs, Adverbs }) => {    
-const name = [
-        _.sample(Adjectives),
-        _.sample(Nouns),
-        _.sample(Verbs),
-        _.sample(Nouns),
-        _.sample(Adverbs),
-    ]
-    console.log(_.join(name, '-'))
-}
 
-randomName(unconfusingJson)
 
 fs.writeFileSync('data/less-confusing-words.json', JSON.stringify(unconfuse(confusingJson), null, 2))

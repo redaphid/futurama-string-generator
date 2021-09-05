@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node ./scripts/generate-name.js"
+    "start": "node ./scripts/print-name.js"
   },
   "dependencies": {
     "fetch": "^1.1.0",
