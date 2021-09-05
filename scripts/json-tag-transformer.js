@@ -32,12 +32,4 @@ const getAdverbs = ({RB}) => {
 
 const unconfusingJson = unconfuse(confusingJson)
 
-const terriblePowerOf2Finder = (n) =>{
-    let power = 1
-    while(Math.pow(2, power) < n) power++
-    return power - 1
-
-}
-
-
-fs.writeFileSync('data/less-confusing-words.json', JSON.stringify(unconfuse(confusingJson), null, 2))
+fs.writeFileSync('data/less-confusing-words.json', JSON.stringify(unconfuse(confusingJson)))

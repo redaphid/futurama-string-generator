@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node ./scripts/print-name.js"
+    "start": "node ./scripts/print-name.js",
+    "unconfuse": "node ./scripts/json-tag-transformer.js"
   },
   "main": "./scripts/generate-name.js",
   "bin": "./scripts/print-name.js",
