@@ -1,6 +1,6 @@
-const fs = require('fs')
-const _ = require('lodash')
-const confusingJson = JSON.parse(fs.readFileSync('data/tagged-words.json', 'utf8'))
+import { readFileSync, writeFileSync } from 'fs'
+import _ from 'lodash'
+const confusingJson = JSON.parse(readFileSync('data/tagged-words.json', 'utf8'))
 
 const unconfuse = (confusing) => {
     const lessConfusing = {
@@ -32,4 +32,4 @@ const getAdverbs = ({RB}) => {
 
 const unconfusingJson = unconfuse(confusingJson)
 
-fs.writeFileSync('data/less-confusing-words.json', JSON.stringify(unconfuse(confusingJson)))
+writeFileSync('data/less-confusing-words.json', JSON.stringify(unconfuse(confusingJson)))

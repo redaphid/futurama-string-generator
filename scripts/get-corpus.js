@@ -1,7 +1,7 @@
 
-const fetch = require('node-fetch')
-const _ = require('lodash')
-const { JSDOM } = require('jsdom');
+import fetch from 'node-fetch';
+import { map } from 'lodash';
+import { JSDOM } from 'jsdom';
 const baseUrl = "https://www.springfieldspringfield.co.uk/"
 
 async function getEpisodeList() {
@@ -30,7 +30,7 @@ async function getScript(url) {
 // }
 async function getScripts() {
     const episodeList = await getEpisodeList()
-    const promises = _.map(episodeList, getScript)
+    const promises = map(episodeList, getScript)
     return await Promise.all(promises)
 }
 

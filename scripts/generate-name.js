@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import _, { random } from 'lodash'
+import _ from 'lodash'
 import path from 'path';
 import { fileURLToPath } from 'url';
 const currentDirectory = path.dirname(fileURLToPath(import.meta.url))
