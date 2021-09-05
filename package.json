@@ -7,6 +7,9 @@
   "author": "redaphid <iam@aaronherres.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "getName": "node ./scripts/json-tag-transformer.js"
+  },
   "dependencies": {
     "fetch": "^1.1.0",
     "lodash": "^4.17.15",

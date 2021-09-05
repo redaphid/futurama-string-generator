@@ -29,6 +29,15 @@ const getAdjectives = (confusing) => {
 
 const unconfusingJson = unconfuse(confusingJson)
 
-console.log(unconfusingJson.Adjectives[0] + ' ' + unconfusingJson.Nouns[1])
+const randomName = (unconfusingJson) => {    
+    const name = [
+        _.sample(unconfusingJson.Adjectives),
+        _.sample(unconfusingJson.Nouns),
+        _.sample(unconfusingJson.Nouns),
+    ]
+    console.log(_.join(name, '-'))
+}
+
+randomName(unconfusingJson)
 
 
