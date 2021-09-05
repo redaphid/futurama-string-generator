@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-const randomName = require('./generate-name')
+import randomName from './generate-name.js'
 console.log(randomName())

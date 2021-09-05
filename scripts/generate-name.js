@@ -1,7 +1,9 @@
-const fs = require('fs')
-const path = require('path')
-const _ = require('lodash')
-const wordPath = path.join(__dirname, '..', 'data', 'less-confusing-words.json')
+import * as fs from 'fs'
+import _, { random } from 'lodash'
+import path from 'path';
+import { fileURLToPath } from 'url';
+const currentDirectory = path.dirname(fileURLToPath(import.meta.url))
+const wordPath = path.join(currentDirectory,'..', 'data', 'less-confusing-words.json')
 const unconfusingJson = JSON.parse(fs.readFileSync(wordPath, 'utf8'))
 const randomFuturamaString = ({ Adjectives, Nouns, Verbs, Adverbs }) => {
     const name = [
@@ -14,6 +16,6 @@ const randomFuturamaString = ({ Adjectives, Nouns, Verbs, Adverbs }) => {
     return name.join('-')
 }
 
-module.exports = () => {
+export default () => {
     return randomFuturamaString(unconfusingJson)
 }
