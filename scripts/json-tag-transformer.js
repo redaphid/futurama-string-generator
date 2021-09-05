@@ -3,57 +3,52 @@ const _ = require('lodash')
 const confusingJson = JSON.parse(fs.readFileSync('data/tagged-words.json', 'utf8'))
 
 const unconfuse = (confusing) => {
-    console.log(Object.keys(confusing))
     const lessConfusing = {
         Nouns: getNouns(confusing),
         Adjectives: getAdjectives(confusing),
         Verbs: getVerbs(confusing),
-        Adverbs: getAdverbs(confusing),                
+        Adverbs: getAdverbs(confusing),
     }
 
     return lessConfusing
 
 }
 
-const getNouns = (confusing) => {
-    let nouns = []
-    nouns = nouns.concat(confusing.NN, confusing.NNP, confusing.NNPS)
-    console.log(nouns.length)
-    return nouns
+const getNouns = ({NN, NNP, NNS, NNPS}) => {    
+    return [].concat(NN, NNP, NNS, NNPS)
 }
 
-const getAdjectives = (confusing) => {
-    let adjectives = []
-    adjectives = adjectives.concat(confusing.JJ)
-    console.log(adjectives.length)
-    return adjectives
+const getAdjectives = ({JJ, JJS, JJR}) => {    
+    return [].concat(JJ, JJS, JJR)
 }
 
-const getVerbs = (confusing) => {
-    let verbs = []
-    verbs = verbs.concat(confusing.VBZ)
-    return verbs
+const getVerbs = ({VBZ, VBD}) => {        
+    return [].concat(VBZ, VBD)
 }
 
-const getAdverbs = (confusing) => {
-    let verbs = []
-    verbs = verbs.concat(confusing.RB)
-    return verbs
+const getAdverbs = ({RB}) => {    
+    return [].concat(RB)
 }
 
 const unconfusingJson = unconfuse(confusingJson)
 
-const randomName = (unconfusingJson) => {    
-    const name = [
-        _.sample(unconfusingJson.Adjectives),
-        _.sample(unconfusingJson.Nouns),
-        _.sample(unconfusingJson.Verbs),
-        _.sample(unconfusingJson.Nouns),
-        _.sample(unconfusingJson.Adverbs),
+const terriblePowerOf2Finder = (n) =>{
+    let power = 1
+    while(Math.pow(2, power) < n) power++
+    return power - 1
+
+}
+const randomName = ({ Adjectives, Nouns, Verbs, Adverbs }) => {    
+const name = [
+        _.sample(Adjectives),
+        _.sample(Nouns),
+        _.sample(Verbs),
+        _.sample(Nouns),
+        _.sample(Adverbs),
     ]
     console.log(_.join(name, '-'))
 }
 
 randomName(unconfusingJson)
 
-
+fs.writeFileSync('data/less-confusing-words.json', JSON.stringify(unconfuse(confusingJson), null, 2))
