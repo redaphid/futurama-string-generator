@@ -1,6 +1,8 @@
 const fs = require('fs')
+const path = require('path')
 const _ = require('lodash')
-const unconfusingJson = JSON.parse(fs.readFileSync('data/less-confusing-words.json', 'utf8'))
+const wordPath = path.join(__dirname, '..', 'data', 'less-confusing-words.json')
+const unconfusingJson = JSON.parse(fs.readFileSync(wordPath, 'utf8'))
 const randomFuturamaString = ({ Adjectives, Nouns, Verbs, Adverbs }) => {
     const name = [
         _.sample(Adjectives),
