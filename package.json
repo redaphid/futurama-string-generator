@@ -1,6 +1,6 @@
 {
   "name": "futurama-string-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates random, hopefully memorable strings based on Futurama scripts",
   "repository": "git@github.com:redaphid/futurama-string-generator.git",
   "author": "redaphid <iam@aaronherres.com>",
