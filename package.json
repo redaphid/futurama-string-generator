@@ -2,7 +2,6 @@
   "name": "futurama-string-generator",
   "version": "1.0.0",
   "description": "Generates random, hopefully memorable strings based on Futurama scripts",
-  "main": "index.js",
   "repository": "git@github.com:redaphid/futurama-string-generator.git",
   "author": "redaphid <iam@aaronherres.com>",
   "license": "MIT",
@@ -10,8 +9,9 @@
   "scripts": {
     "start": "node ./scripts/print-name.js"
   },
+  "main": "./scripts/generate-name.js",
+  "bin": "./scripts/print-name.js",
   "dependencies": {
-    "fetch": "^1.1.0",
     "lodash": "^4.17.15",
     "natural": "^0.6.3"
   },
